@@ -1,0 +1,30 @@
+<html>
+<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;"  vr-mode-ui="enabled: false" >
+        <a-assets>
+            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <a-asset-item id="object" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.obj?1515294612014"></a-asset-item>
+        <a-asset-item id="material" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.mtl?1515294611023"></a-asset-item>
+     <img id="time-world" src ="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fscreenshot-time%20mirror%20vision%20vr-1515347539104.png?1515347634788"/>
+     
+          <img id="liminroom1" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2FVR5.png?1515295195566"/>
+      
+      </a-assets>
+      
+
+<a-obj-model src="#object" position="0 0 -11.528" material="opacity:0.8;color:#84699c;metalness:1;roughness:0.1;sphericalEnvMap:#liminroom1" rotation="0 218.88169755546065 0">
+         <a-animation easing="linear" attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite">
+        </a-animation>
+        </a-obj-model>
+      
+  	<a-entity camera="" position="0 -0.638 16.109"></a-entity>
+   
+
+      
+    </a-scene>
+        
+  </body>
+</html>

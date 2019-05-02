@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TIME Mirror Vision VR</title>
+    <meta name="description" content="Future Synth Pop meets Virtual Reality">
+   <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+        <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="https://raw.githubusercontent.com/aframevr/aframe/master/examples/showcase/link-traversal/js/components/link-controls.js"></script>
+    <script src="components/set-image.js"></script>
+    
+    <script>
+  AFRAME.registerComponent('link', {
+  schema: {default: ''},
+
+  init: function () {
+    var url = this.data;
+    this.el.addEventListener('click', function () {
+    window.location.href = url;
+ });
+}
+});
+          
+    </script>
+    
+  </head>
+  <body>
+    <a-scene auto-enter-vr>
+      <a-assets>
+            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <a-asset-item id="object" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.obj?1515294612014"></a-asset-item>
+        <a-asset-item id="material" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.mtl?1515294611023"></a-asset-item>
+          <img id="tour" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Ftour-dates-spring.png?1515296761579" width="536" height="720" crossorigin="anonymous">
+         <img id="sky" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2FVR-TIME.jpg?1515294550782" crossorigin="anonymous" />
+          <img id="instagram" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Finstagram-wall-web.png?1515300080527" />
+        
+          <img id="bandcamp" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Ftime-embed.JPG?1515301164219" />
+        
+     
+      </a-assets>
+      
+          <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true">
+
+          <a-obj-model link="index.html" src="#object" class="link" sound="on:click;src:#click-sound" scale="2 2 2" position="20 -0.937 12.893" material="color:#84699c;opacity:.8;metalness:1;roughness:0.1;sphericalEnvMap:https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2FVR5.png?1515295195566" rotation="0 156.27892800010102 0" visible="true" obj-model="obj:#object">
+         <a-animation easing="linear" attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite">
+        </a-animation>
+        </a-obj-model>
+        </a-entity>
+      
+       <a-text class="link" position="22.914 0.087 3.336" rotation="-0.2864788975654116 -113.21646031785068 -0.17188733853924698" scale="11.705 11.697 11.697" visible="true" text="anchor:align;width:5;value:The Limin Room"></a-text>
+
+       
+
+          <a-plane  src="#tour"   sound="on: click; src: #click-sound"
+                 position="-100 0 0" 
+               rotation="0 90 0"
+                 scale="200 200 200 " 
+                 material="transparent:true"
+                  > 
+           
+          </a-plane> 
+      
+  
+  
+      <a-plane  sound="on: click; src: #click-sound" src="#instagram" position="-1.332 16.368 139.03" rotation="0 180 0" scale="200 200 200" material="src:#instagram;transparent:true;roughness:0" visible="true" 
+               geometry="primitive:plane"
+               >
+      </a-plane>
+      
+       <a-text position="-304.021 11.915 199.216" rotation="0 124.733 0" scale="45.702 64.3 179.749" visible="true" text="anchor:align;width:5;value:Instagram 360"></a-text>
+      <a-sphere class="link" src="#time-world" position="-15.773 9.416 115.91" rotation="0 930.7654177317079 0" scale="29.515 29.515 29.515" visible="true" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Finstasphere2.jpg?1515350425667;roughness:0;envMap:;ambientOcclusionMapIntensity:1;opacity:1" geometry="primitive:sphere" link="instasphere.html">
+         <a-animation easing="linear" attribute="rotation" dur="15000" to="0 960 0" repeat="indefinite">
+          </a-animation>
+      </a-sphere>
+      
+      <a-plane  sound="on: click; src: #click-sound" src="#bandcamp" position="273.903 15.877 -58.773" rotation="0 -60 0" scale="200 200 200" material="src:#bandcamp;transparent:true;roughness:0" visible="true" 
+               geometry="primitive:plane"
+               > 
+      </a-plane>
+      
+
+      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+      <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+
+
+      <a-sky src="#sky" crossorigin="anonymous" rotation="0 -90 0" >
+      </a-sky>
+      
+      
+      
+         <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 3000"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+      
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tropical Vapor Beta</title>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+        <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="https://raw.githubusercontent.com/aframevr/aframe/master/examples/showcase/link-traversal/js/components/link-controls.js"></script>
+    <script src="components/set-image.js"></script>
+    
+    <script>
+  AFRAME.registerComponent('link', {
+  schema: {default: ''},
+
+  init: function () {
+    var url = this.data;
+    this.el.addEventListener('click', function () {
+    window.location.href = url;
+ });
+}
+});
+      
+
+    </script>
+    
+  </head>
+  <body>
+    <a-scene auto-enter-vr>
+      
+       <a-assets>
+            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <a-asset-item id="object" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.obj?1515294612014"></a-asset-item>
+        <a-asset-item id="material" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.mtl?1515294611023"></a-asset-item>
+       
+        
+     <img id="time-world" src ="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fscreenshot-time%20mirror%20vision%20vr-1515347539104.png?1515347634788"/>
+      </a-assets>
+      
+             <a-text class="link" position="13.473 0.087 7.474" rotation="-0.286 -113.216 -0.172" scale="11.705 11.697 11.697" visible="true" text="anchor:align;width:5;value:The Limin Room"></a-text>
+
+         <a-obj-model src="#object" class="link" sound="on:click;src:#click-sound" scale="2 2 2" position="20 1 28.014" material="color:#84699c;opacity:.8;metalness:1;roughness:0.1;sphericalEnvMap:https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2FVR5.png?1515295195566" link="index.html" rotation="0 85.51271999988421 0" visible="true" obj-model="obj:#object">
+         <a-animation easing="linear" attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite">
+        </a-animation>
+        </a-obj-model>
+   <a-sky id="image-360" src="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2FVR-Tropical.jpg?1515364701601" crossorigin="anonymous" rotation="0 -110 0"></a-sky>
+     
+            <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 3000"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prototypes V010</title>
+    <meta name="description" content="Future Synth Pop meets Virtual Reality">
+   <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+        <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="https://raw.githubusercontent.com/aframevr/aframe/master/examples/showcase/link-traversal/js/components/link-controls.js"></script>
+    <script src="components/set-image.js"></script>
+        <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+<script src="https://rawgit.com/flysonic10/aframe-passthrough/master/dist/aframe-passthrough-component.min.js"></script> 
+    <script>
+  AFRAME.registerComponent('link', {
+  schema: {default: ''},
+
+  init: function () {
+    var url = this.data;
+    this.el.addEventListener('click', function () {
+    window.location.href = url;
+ });
+}
+    
+});
+      
+
+    </script>
+    
+  </head>
+  <body>
+    <a-scene auto-enter-vr>
+      <a-assets>
+            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <a-asset-item id="object" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.obj?1515294612014"></a-asset-item>
+        <a-asset-item id="material" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Fdiamonds.mtl?1515294611023"></a-asset-item>
+          <img id="tour" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Ftour-dates-spring.png?1515296761579" width="536" height="720" crossorigin="anonymous">
+         <img id="sky" src="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2FVR-Limin-Room.jpg?1515355443456" crossorigin="anonymous" />
+          <img id="instagram" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Finstagram-wall-web.png?1515300080527" />
+        
+        <img id="hiro" src="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2FHIRO.jpg?1515466606361">
+        <img id="protoposter" src="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fprototypes.jpg?1515466807677">
+          <img id="bandcamp" src="https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2Ftime-embed.JPG?1515301164219" />
+        
+     <img id="time-world" src ="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fscreenshot-time%20mirror%20vision%20vr-1515347539104.png?1515347634788"/>
+      <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+       
+        <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
+        <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
+        <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
+      
+      </a-assets>
+      
+  <a-entity position="0 -10 0" rotation="0 271.557696000054 0" scale="1 1 1" visible="true">
+
+          
+          <a-obj-model src="#object" scale="22.403 22.403 22.403" position="-52.754 -22.846 222.276" material="color:#84699c;opacity:.8;metalness:1;roughness:0.1;sphericalEnvMap:https://cdn.glitch.com/ada194ea-c8dd-404d-9dda-7b7a8d889ebc%2FVR5.png?1515295195566" rotation="0 318.4499425337115 0" visible="true" obj-model="obj:#object">
+          <a-animation easing="linear" attribute="rotation" dur="15000" to="0 960 0" repeat="indefinite">
+        </a-animation>
+          
+        </a-obj-model>
+        </a-entity>
+
+        <a-text position="71.831 -41.164 -94.953" rotation="0 -61.65025875607658 0" scale="18.316 18.302 18.302" visible="true" text="anchor:align;width:5;value:TIME VR"></a-text>
+      <a-sphere class="link" src="#time-world" position="170.367 -53.168 -188.786" rotation="0 346.3225392527772 0" scale="24.406 24.406 24.406" visible="true" material="src:#time-world;roughness:0;envMap:;ambientOcclusionMapIntensity:1;opacity:1" geometry="primitive:sphere" link="time.html">
+         <a-animation easing="linear" attribute="rotation"  dur="15000" to="0 960 0" repeat="indefinite">
+          </a-animation>
+      </a-sphere>
+     
+      
+    
+<a-text text-geometry="value:The Limin Room;font:#dawningFont;bevelEnabled:true;bevelSize:0.05;bevelThickness:0.05;curveSegments:12;size:1;height:0" material="color:#ff80c0;metalness:2;roughness:0;sphericalEnvMap:#pink;height:256.7;envMap:#sky" position="85.519 51.645 93.341" rotation="-3.2658594322456924 -174.6375359558749 -6.7609019825437136" scale="12.6 12.6 12.6" visible="true" text="anchor:align;width:5"></a-text>
+          
+<!--       <a-text position="-48.562 -10.262 179.607" rotation="0 124.733 0" scale="18.316 18.302 18.302" visible="true" text="anchor:align;width:5;value:Curleys VR"></a-text>
+       
+        <a-sphere class="link" src="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2F360_0059_Stitch_YHC.JPG?1515375848934" position="-122.734 7.81 350.247" rotation="0 346.32259734401833 0" scale="24.406 24.406 24.406" visible="true" material="roughness:0;envMap:;ambientOcclusionMapIntensity:1;opacity:1" geometry="primitive:sphere" link="https://www.youtube.com/watch?v=XkLzIyrgte4?autoplay=1">
+         <a-animation easing="linear" attribute="rotation"  dur="15000" to="0 960 0" repeat="indefinite">
+          </a-animation>
+        </a-sphere>
+      
+       <a-text position="-48.562 -10.262 179.607" rotation="0 124.733 0" scale="18.316 18.302 18.302" visible="true" text="anchor:align;width:5;value:pari∀h VR"></a-text>
+           <a-sphere class="link" src="https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2F360_0059_Stitch_YHC.JPG?1515375848934" position="-54.915 7.81 350.247" rotation="0 559.78 0" scale="24.406 24.406 24.406" visible="true" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2F360_0059_Stitch_YHC.JPG?1515375848934;roughness:0;envMap:;ambientOcclusionMapIntensity:1;opacity:1" geometry="primitive:sphere" link="https://www.youtube.com/watch?v=SnraaIqrGrs?autoplay=1">
+         <a-animation easing="linear" attribute="rotation" dur="15000" to="0 960 0" repeat="indefinite">
+          </a-animation>
+        </a-sphere> -->
+      
+      
+         
+      <a-text position="-304.021 11.915 199.216" rotation="0 124.733 0" scale="45.702 64.3 179.749" visible="true" text="anchor:align;width:5;value:Tropical Vapor Beta"></a-text>
+      <a-sphere class="link" src="#time-world" position="-695.177 89.256 350.247" rotation="0 779.2283610857721 0" scale="52.193 52.193 52.193" visible="true" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2FVR-Tropical.jpg?1515364701601;roughness:0;envMap:;ambientOcclusionMapIntensity:1;opacity:1" geometry="primitive:sphere" link="tropical.html">
+         <a-animation easing="linear" attribute="rotation" dur="15000" to="0 960 0" repeat="indefinite">
+          </a-animation>
+      </a-sphere>
+      
+  
+      
+      
+     <a-plane class="link" target="_blank" link="ar/index.html" sound="on:click;src:https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg" src="#hiro" position="-144.744 -162.038 -44.237" rotation="-82.391 -168.908 -99.064" scale="62.322 62.322 62.322" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fkanji-marker.png?1515866454682;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> 
+      </a-plane>
+      
+      
+      <a-plane link src="#protoposter" position="170.911 68.007 233.151" rotation="-1.375 -159.683 -3.151" scale="117.827 74.487 62.322" material="src:#protoposter;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> </a-plane>
+      
+   <a-plane link="https://www.youtube.com/watch?v=QfML1IlXDXw&list=PLi288POEaTwJvXHrD-ny8dMLqXDG3dBay" target="_blank" class="link" sound="on:click;src:https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg" src="#protoposter" position="72.86 43.496 266.235" rotation="-2.291831180523293 -160.88654887273515 -0.5729577951308232" scale="72.14 105.386 49.781" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Faction-research.jpg?1515546719035;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> 
+      </a-plane>
+        
+        <a-plane link="https://www.youtube.com/watch?v=AOEp1UKo0_U&list=PLi288POEaTwIgWv8-vPfIhjrezhSyucNH" target="_blank" class="link" sound="on:click;src:https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"  position="75.907 -83.513 273.115" rotation="-1.3750987083139758 -159.68333750296043 -3.1512678732195276" scale="77.777 113.62 46.706" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fironing.jpg?1515546702315;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> 
+    </a-plane>
+      
+      <a-plane link="https://www.youtube.com/watch?v=puvDo7GL_nE&list=PLi288POEaTwIKILzrX-zmYud-6GGkijHA" target="_blank" class="link" sound="on:click;src:https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"  position="-3.006 -34.376 293.497" rotation="-3.6096341093241864 -166.67342260355647 -0.8594366926962348" scale="67.968 48.694 46.902" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2F24899945_10159512426860447_8534572781736159913_n.jpg?1515547644203;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> 
+      
+      </a-plane>
+      <a-plane  position="-3.202 46.627 274.578" rotation="-0.344 -160.371 0.172" scale="65.655 73.396 23.206" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Flilac.jpg?1515546704326;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> 
+         </a-plane>
+      
+   
+      
+      <a-plane link="https://www.youtube.com/watch?v=gn6CI2DtGwE&list=PLi288POEaTwK7Xy0yoNJ56E4N1lyOEj6z" target="_blank" class="link" sound="on:click;src:https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg" src="#protoposter" position="173.813 -14.052 233.151" rotation="-1.375 -159.683 -3.151" scale="117.827 74.487 62.322" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fsunodeko.jpg?1515546708105;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> 
+      
+      </a-plane>
+      
+      <a-plane link="https://www.youtube.com/watch?v=SnraaIqrGrs&list=PLi288POEaTwJYAIfT-xwhafypPyXnlFxb" target="_blank" class="link" sound="on:click;src:https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg" src="#protoposter" position="176.559 -94.801 229.712" rotation="-1.375 -159.683 -3.151" scale="117.827 74.487 62.322" material="src:https://cdn.glitch.com/8c5b9b2f-ea93-4666-8c7b-69f363674141%2Fquintron.jpg?1515547742821;transparent:true;roughness:0" visible="true" geometry="primitive:plane"> 
+      </a-plane>
+
+      <a-sky src="#sky" crossorigin="anonymous" rotation="0 -90 0" >
+      </a-sky>
+      
+         <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 3000"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+      
+    </a-scene>
+  </body>
+</html>

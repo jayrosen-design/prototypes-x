@@ -1,4 +1,5 @@
-# prototypes-x
-Virtual art gallery &amp; concert hall
+# Prototypes V010
 
-Made with A-frame / three.js / MAYA 
+January 13, 2018
+
+The Limin Room in VR
